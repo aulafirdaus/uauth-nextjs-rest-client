@@ -21,7 +21,7 @@ export async function uauthMiddleware(req: NextRequest) {
     );
   }
 
-  const requestIP = req.ip || req.headers.get('x-forwarded-for') || null;
+  const requestIP = req.headers.get('x-forwarded-for') || (req as any).ip || null;
   const requestMethod = req.method;
   const requestFullUrl = req.url;
   const requestUserAgent = req.headers.get('user-agent') || null;
