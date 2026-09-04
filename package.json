@@ -1,0 +1,39 @@
+{
+  "name": "uauth-nextjs-rest-client",
+  "version": "1.0.0",
+  "description": "UAuth REST API Client for Next.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "nextjs",
+    "uauth",
+    "sso",
+    "auth",
+    "rest",
+    "client"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^26.4.1",
+    "next": "^16.3.4",
+    "tsup": "^8.5.1",
+    "typescript": "^7.0.2"
+  }
+}
